@@ -1,6 +1,5 @@
-
-import streamlit as st
 import spacy
+import streamlit as st
 from spacy import displacy
 import en_core_web_sm 
 
