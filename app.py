@@ -1,14 +1,12 @@
 import spacy
 import streamlit as st
 from spacy import displacy
-import en_core_web_sm 
-
+import en_core_web_sm
 
 DEFAULT_TEXT = "Apple Inc. is planning to build a new headquarters in Cupertino, California for $5 billion."
 HTML_WRAPPER = """<div style="overflow-x: auto; border: 1px solid #e6e9ef; border-radius: 0.25rem; padding: 1rem; margin-bottom: 1rem">{}</div>"""
 
-
-@st.cache_resource
+@st.cache(allow_output_mutation=True)
 def load_model(model_name):
     """Loads the spaCy model."""
     try:
@@ -86,4 +84,3 @@ else:
 st.sidebar.markdown("---")
 st.sidebar.markdown("Powered by [spaCy](https://spacy.io/) & [Streamlit](https://streamlit.io/)")
 st.sidebar.markdown(f"spaCy Model: `en_core_web_sm`")
-
